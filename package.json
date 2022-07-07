@@ -2,21 +2,22 @@
   "name": "sveltekit",
   "version": "0.0.1",
   "scripts": {
-    "dev": "svelte-kit dev",
-    "build": "svelte-kit build",
-    "preview": "svelte-kit preview"
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "devDependencies": {
-    "@sveltejs/adapter-node": "^1.0.0-next.73",
-    "@sveltejs/kit": "^1.0.0-next.336",
-    "svelte": "^3.48.0"
-  },
-  "type": "module",
   "dependencies": {
     "@fontsource/fira-mono": "^4.2.2",
     "@lukeed/uuid": "^2.0.0",
     "cookie": "^0.4.1"
   },
+  "devDependencies": {
+    "@sveltejs/adapter-node": "^1.0.0-next.78",
+    "@sveltejs/kit": "^1.0.0-next.359",
+    "svelte": "^3.48.0",
+    "vite": "^2.9.13"
+  },
+  "type": "module",
   "engines": {
     "node": ">=16.7"
   }
