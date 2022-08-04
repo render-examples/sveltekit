@@ -1,7 +1,7 @@
 import { api } from './_api';
 
 // GET /todos.json
-export const get = async (event) => {
+export const GET = async (event) => {
 	// event.locals.userid comes from src/hooks.js
 	const response = await api(event, `todos/${event.locals.userid}`);
 
@@ -15,7 +15,7 @@ export const get = async (event) => {
 };
 
 // POST /todos.json
-export const post = async (event) => {
+export const POST = async (event) => {
 	const data = await event.request.formData();
 
 	const response = await api(event, `todos/${event.locals.userid}`, {
