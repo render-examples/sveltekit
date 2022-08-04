@@ -12,10 +12,10 @@
     "cookie": "^0.4.1"
   },
   "devDependencies": {
-    "@sveltejs/adapter-node": "^1.0.0-next.78",
-    "@sveltejs/kit": "^1.0.0-next.359",
-    "svelte": "^3.48.0",
-    "vite": "^2.9.13"
+    "@sveltejs/adapter-node": "^1.0.0-next.85",
+    "@sveltejs/kit": "^1.0.0-next.403",
+    "svelte": "^3.49.0",
+    "vite": "^3.0.4"
   },
   "type": "module",
   "engines": {
