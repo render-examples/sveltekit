@@ -4,3 +4,4 @@ services:
     env: node
     buildCommand: npm install && npm run build
     startCommand: node build/index.js
+    autoDeploy: false
