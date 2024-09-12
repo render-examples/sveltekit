@@ -1,7 +1,7 @@
 services:
   - type: web
     name: sveltekit
-    env: node
+    runtime: node
     buildCommand: npm install && npm run build
     startCommand: node build/index.js
     autoDeploy: false
