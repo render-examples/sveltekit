@@ -10,13 +10,13 @@
   "devDependencies": {
     "@fontsource/fira-mono": "^4.5.10",
     "@neoconfetti/svelte": "^1.0.0",
-    "@sveltejs/adapter-node": "^4.0.1",
-    "@sveltejs/kit": "^2.5.26",
-    "@sveltejs/vite-plugin-svelte": "^3.1.2",
-    "svelte": "^4.2.19",
-    "svelte-check": "^3.8.6",
-    "typescript": "^5.6.2",
-    "vite": "^5.4.3"
+    "@sveltejs/adapter-node": "^5.2.8",
+    "@sveltejs/kit": "^2.7.2",
+    "@sveltejs/vite-plugin-svelte": "^4.0.0",
+    "svelte": "^5.0.2",
+    "svelte-check": "^4.0.5",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.9"
   },
   "type": "module"
 }
