@@ -4,42 +4,39 @@
 
   import { reduced_motion } from "./reduced-motion";
 
-  /** @type {import('./$types').PageData} */
-  export let data;
-
-  /** @type {import('./$types').ActionData} */
-  export let form;
+  /** @type {{ data: import('./$types').PageData, form: import('./$types').ActionData }} */
+  let { data, form } = $props();
 
   /** Whether or not the user has won */
-  $: won = data.answers.at(-1) === "xxxxx";
+  let won = $derived(data.answers.at(-1) === "xxxxx");
 
   /** The index of the current guess */
-  $: i = won ? -1 : data.answers.length;
+  let i = $derived(won ? -1 : data.answers.length);
 
   /** The current guess */
-  $: currentGuess = data.guesses[i] || "";
+  let currentGuess = $state("");
+  $effect(() => {
+    currentGuess = data.guesses[i] || "";
+  });
 
   /** Whether the current guess can be submitted */
-  $: submittable = currentGuess.length === 5;
+  let submittable = $derived(currentGuess.length === 5);
 
   /**
    * A map of classnames for all letters that have been guessed,
    * used for styling the keyboard
    * @type {Record<string, 'exact' | 'close' | 'missing'>}
    */
-  let classnames;
+  let classnames = $state({});
 
   /**
    * A map of descriptions for all letters that have been guessed,
    * used for adding text for assistive technology (e.g. screen readers)
    * @type {Record<string, string>}
    */
-  let description;
+  let description = $state({});
 
-  $: {
-    classnames = {};
-    description = {};
-
+  $effect(() => {
     data.answers.forEach((answer, i) => {
       const guess = data.guesses[i];
 
@@ -55,7 +52,7 @@
         }
       }
     });
-  }
+  });
 
   /**
    * Modify the game state without making a trip to the server,
@@ -63,6 +60,7 @@
    * @param {MouseEvent} event
    */
   function update(event) {
+    event.preventDefault();
     const key = /** @type {HTMLButtonElement} */ (event.target).getAttribute(
       "data-key"
     );
@@ -168,7 +166,7 @@
         >
 
         <button
-          on:click|preventDefault={update}
+          onclick={update}
           data-key="backspace"
           formaction="?/update"
           name="key"
@@ -181,7 +179,7 @@
           <div class="row">
             {#each row as letter}
               <button
-                on:click|preventDefault={update}
+                onclick={update}
                 data-key={letter}
                 class={classnames[letter]}
                 disabled={submittable}
@@ -210,7 +208,7 @@
       stageHeight: window.innerHeight,
       colors: ["#ff3e00", "#40b3ff", "#676778"],
     }}
-  />
+  ></div>
 {/if}
 
 <style>
