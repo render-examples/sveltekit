@@ -28,6 +28,8 @@ npm run build
 
 ## Deploying to Render
 
-Follow the deploy instructions at https://render.com/docs/deploy-sveltekit
+Follow the deploy instructions at https://render.com/docs/deploy-sveltekit or click the button below:
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/render-examples/sveltekit)
+<a href="https://render.com/deploy" referrerpolicy="no-referrer-when-downgrade" rel="nofollow">
+  <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render" />
+</a>
